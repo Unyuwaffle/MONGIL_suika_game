@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수박게임 — Monring Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 게임 전체를 감싸는 래퍼 (1280×720 논리 해상도 고정) -->
+  <div id="gameWrapper">
+    <canvas id="gameCanvas" width="1280" height="720"></canvas>
+
+    <!-- 게임 오버 오버레이 -->
+    <div id="gameOverOverlay" class="overlay hidden">
+      <div class="overlay-box">
+        <h1>GAME OVER</h1>
+        <p class="final-score-label">최종 점수</p>
+        <p id="finalScore" class="final-score-value">0</p>
+        <button id="restartBtn" data-testid="restart-button">다시 시작</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Matter.js 로컬 파일 (오프라인 지원) -->
+  <script src="matter.min.js"></script>
+  <!-- 게임 메인 로직 -->
+  <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Kiro IDE 내부 설정 (개발 도구, 게임과 무관)
+.kiro/
+
+# AI-DLC 개발 문서 (설계 산출물, 게임 실행에 불필요)
+aidlc-docs/
+
+# OS 임시 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 에디터 설정
+.vscode/
+.idea/
+*.swp
+*.swo

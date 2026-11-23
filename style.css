@@ -1,0 +1,113 @@
+/* =============================================
+   수박게임 — 레터박스 반응형 레이아웃
+   논리 해상도: 1280×720 고정
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 게임 래퍼: 항상 1280×720 논리 크기 유지.
+   ScaleManager가 JS에서 transform: scale(s)를 적용.      */
+#gameWrapper {
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  transform-origin: top left;
+  /* 기본 위치는 JS가 계산해서 margin으로 맞춤 */
+}
+
+#gameCanvas {
+  display: block;
+  /* 커서는 게임 통 위에서만 표시 */
+  cursor: crosshair;
+}
+
+/* =============================================
+   게임 오버 오버레이
+   ============================================= */
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 1280px;
+  height: 720px;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay-box {
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+  border: 2px solid #e94560;
+  border-radius: 20px;
+  padding: 48px 72px;
+  text-align: center;
+  color: #fff;
+  min-width: 400px;
+}
+
+.overlay-box h1 {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 56px;
+  color: #e94560;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+  text-shadow: 0 0 20px rgba(233, 69, 96, 0.6);
+}
+
+.final-score-label {
+  font-size: 20px;
+  color: #aaa;
+  margin-bottom: 8px;
+}
+
+.final-score-value {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 64px;
+  color: #ffd700;
+  font-weight: 900;
+  margin-bottom: 36px;
+  text-shadow: 0 0 16px rgba(255, 215, 0, 0.5);
+}
+
+#restartBtn {
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #e94560, #c0392b);
+  border: none;
+  border-radius: 50px;
+  padding: 14px 56px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: transform 0.1s, box-shadow 0.1s;
+  box-shadow: 0 4px 16px rgba(233, 69, 96, 0.4);
+}
+
+#restartBtn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 24px rgba(233, 69, 96, 0.7);
+}
+
+#restartBtn:active {
+  transform: scale(0.97);
+}
